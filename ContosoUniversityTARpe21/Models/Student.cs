@@ -7,7 +7,7 @@
 
         public string FirstName { get; set; }
 
-        public int MyProperty { get; set; }
+        public DateTime EnrollmentDate { get; set; }
        
         public ICollection<Enrollment> Enrollments { get; set; }
 
