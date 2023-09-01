@@ -40,6 +40,32 @@ namespace ContosoUniversityTARpe21.Data
                 context.Courses.Add(c);
             }
             context.SaveChanges();
+
+            var enrollments = new Enrollment[]
+            {
+                new Enrollment{StudentID=1, CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.C},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.C},
+                new Enrollment{StudentID=1, CourseID=6666,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1050,Grade=Grade.B},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.D},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.B},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.B},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.F},
+                new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.B},
+            };
+            foreach (Enrollment e in enrollments)
+            {
+                context.Enrollments.Add(e);
+            }
+            context.SaveChanges();
         }
 
     }
