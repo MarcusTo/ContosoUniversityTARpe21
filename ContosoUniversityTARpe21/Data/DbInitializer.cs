@@ -59,7 +59,6 @@ namespace ContosoUniversityTARpe21.Data
                 new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
                 new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.F},
                 new Enrollment{StudentID=1, CourseID=6900,Grade=Grade.A},
-                new Enrollment{StudentID=1, CourseID=1420,Grade=Grade.B},
             };
             foreach (Enrollment e in enrollments)
             {

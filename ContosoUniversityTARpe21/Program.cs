@@ -1,20 +1,24 @@
 using ContosoUniversityTARpe21.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-internal class Program
+public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var host = CreateHostBuilder(args).Build();
-        CreateDbIfNotExists(host);
-        host.Run();
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-        builder.Services.AddDbContext<SchoolContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaulConnection")));
-
+        builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+        builder.Services.AddDbContext<SchoolContext>(options => options
+        .UseSqlServer(builder.Configuration.GetConnectionString("DefaulConnection")));
         var app = builder.Build();
+
+        CreateDbIfNotExists(app);
+
+
+        //startup.Configure(app, builder.HostingEnviroment);
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
